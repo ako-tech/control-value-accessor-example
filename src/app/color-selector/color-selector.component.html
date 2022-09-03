@@ -4,4 +4,6 @@
   [style.backgroundColor]="color.hex"
   (click)="selectColor(color)"
   [class.selected]="color === colorSelected"
+  [disabled]="isDisabled"
+  (blur)="onTouchedCb?.()"
 ></button>

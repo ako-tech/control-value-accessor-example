@@ -16,7 +16,10 @@
       <label for="color">
         Color: <span>{{ colorSelectedDisplayName$ | async }}</span>
       </label>
-      <ako-color-selector [options]="product.colors"></ako-color-selector>
+      <ako-color-selector
+        formControlName="color"
+        [options]="product.colors"
+      ></ako-color-selector>
     </div>
     <button type="submit">Añadir al carrito</button>
   </form>
@@ -30,7 +33,7 @@
 </pre> -->
 <!-- <pre>
   IsDisabled: {{ orderForm.controls.color.disabled }}
-</pre> -->
-<!-- <button class="toggle" (click)="toggleDisabled()">
+</pre>
+<button class="toggle" (click)="toggleDisabled()">
   {{ orderForm.controls.color.disabled ? "Habilitar" : "Deshabilitar" }}
 </button> -->
