@@ -1,0 +1,36 @@
+<img [src]="imageColoredSrc$ | async" alt="{{ product.name }}" />
+<div class="info">
+  <h1>{{ product.name }}</h1>
+  <p class="description">{{ product.description }}</p>
+
+  <form [formGroup]="orderForm">
+    <div class="quantity-input">
+      <label for="quantity"> Cantidad: </label>
+      <select id="quantity" formControlName="quantity">
+        <option *ngFor="let qty of [1, 2, 3, 4, 5, 6, 7, 8, 9]" [value]="qty">
+          {{ qty }}
+        </option>
+      </select>
+    </div>
+    <div class="color-input">
+      <label for="color">
+        Color: <span>{{ colorSelectedDisplayName$ | async }}</span>
+      </label>
+      <ako-color-selector [options]="product.colors"></ako-color-selector>
+    </div>
+    <button type="submit">Añadir al carrito</button>
+  </form>
+</div>
+
+<!-- <pre>
+  {{ orderForm.value | json }}
+</pre> -->
+<!-- <pre>
+  IsTouched: {{ orderForm.controls.color.touched }}
+</pre> -->
+<!-- <pre>
+  IsDisabled: {{ orderForm.controls.color.disabled }}
+</pre> -->
+<!-- <button class="toggle" (click)="toggleDisabled()">
+  {{ orderForm.controls.color.disabled ? "Habilitar" : "Deshabilitar" }}
+</button> -->

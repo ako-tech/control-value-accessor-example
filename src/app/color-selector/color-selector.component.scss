@@ -1,0 +1,17 @@
+button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  margin-right: var(--half-separation);
+  cursor: pointer;
+
+  &.selected {
+    outline: 3px solid var(--primary-color);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: initial;
+  }
+}
